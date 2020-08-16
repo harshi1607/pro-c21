@@ -13,22 +13,7 @@ function setup() {
 
 function draw() {
   background(255,255,255);  
-if(wall.x-bullet.x<(bullet.width+wall.width)/2){
-  bullet.collide(wall)
-  bullet.velocityX=0
 
-  var deformation=0.5*weight*speed*speed/25509;
-  console.log(deformation)
-  if(deformation>180){
-    bullet.shapeColor="pink"
-  }
-  if(deformation<180 && deformation>100){
-    bullet.shapeColor="blue"
-  }
-  if(deformation<100){
-    bullet.shapeColor="yellow"
-  }
-}
 if(hasCollided(bullet,wall)){
   bullet.velocityX=0
 
@@ -53,5 +38,7 @@ function hasCollided(lbullet,lwall){
   {
     return true
   }
+  else{
   return false
+  }
 }
